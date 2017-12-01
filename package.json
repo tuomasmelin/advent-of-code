@@ -4,9 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava",
+    "lint": "standard",
+    "dev": "chokidar '**/*.js' -c 'standard && ava'"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "devDependencies": {
+    "ava": "^0.24.0",
+    "chokidar-cli": "^1.2.0",
+    "moment": "^2.19.3",
+    "precommit-hook": "^3.0.0",
+    "promise": "^8.0.1",
+    "request": "^2.83.0",
+    "standard": "^10.0.3"
+  }
 }
